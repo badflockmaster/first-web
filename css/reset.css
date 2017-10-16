@@ -1,0 +1,36 @@
+/*
+    初始界面元素，包括padding，margin， a标签的下划线，
+    以及默认的color。
+ */
+
+body, div, dd, dt, dl, ul, li, h1, h2, h3, h4, h5, h6, input, form, textarea, a, p {
+    padding     : 0;
+    margin      : 0;
+    font-family : "Times New Roman", "Microsoft YaHei UI", sans-serif;
+}
+
+ul, dl, ol {
+    list-style : none;
+}
+
+a {
+    text-decoration : none;
+    display         : none;
+}
+
+img {
+    display : block;
+    border  : none;
+}
+
+.clearfix {
+    zoom : 1;
+}
+
+.clearfix:after {
+    display    : block;
+    clear      : both;
+    content    : '';
+    visibility : hidden;
+    height     : 0;
+}

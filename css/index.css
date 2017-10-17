@@ -43,6 +43,7 @@ header {
     color       : rgba(0, 0, 0, 0.8);
     position    : relative;
     z-index     : 1;
+    overflow    : hidden;
 }
 
 .live-chat-btn:before {
@@ -53,28 +54,48 @@ header {
     left          : 0;
     width         : 100%;
     height        : 100%;
-    background    : rgb(255, 255, 0);
+    background    : #ffe13e;
     z-index       : -1;
     transition    : left 0.3s ease-in-out;
     border-radius : 4px;
 }
 
 .live-chat-content {
-    position     : relative;
-    margin-top   : 22px;
-    height       : 35px;
-    margin-left  : 22px;
-    border-left  : 1px solid rgba(0, 0, 0, 0.4);
-    line-height  : 35px;
-    padding-left : 21px;
-    font-size    : larger;
-    z-index      : 1;
+    position      : relative;
+    margin-top    : 22px;
+    height        : 35px;
+    margin-left   : 22px;
+    border-left   : 1px solid rgba(0, 0, 0, 0.4);
+    line-height   : 35px;
+    padding-left  : 21px;
+    padding-right : 10px;
+    font-size     : larger;
+    transition    : all .3s ease;
 }
 
-.live-chat-btn:hover:before {
-    left : 148px;
-
+.live-chat-btn:hover + .live-chat-content {
+    outline     : 1px solid rgba(0, 0, 0, 0.3);
+    box-shadow  : 2px 3px 14px rgba(0, 0, 0, 0.3), -2px -3px 14px rgba(0, 0, 0, 0.3);
+    border-left : none;
 }
+
+.live-chat-content:before {
+    content       : "";
+    display       : block;
+    position      : absolute;
+    top           : 0;
+    left          : -115px;
+    width         : 100%;
+    height        : 100%;
+    background    : #e8645a;
+    z-index       : -1;
+    border-radius : 4px;
+}
+
+/*.live-chat-btn:hover + .live-chat-content:before {
+    left: 10px;
+    color: #fff;
+}*/
 
 .header-nav {
     height      : 147px;
@@ -111,4 +132,317 @@ header {
     height     : 47px;
 }
 
+.banner {
+    position        : relative;
+    background      : url("../images/web/banner-main.png") no-repeat;
+    /*background-position-y: -147px;*/
+    height          : 795px;
+    background-size : 100% 100%;
+}
 
+.banner:before {
+    content    : '';
+    display    : block;
+    position   : absolute;
+    top        : 0;
+    left       : 0;
+    width      : 100%;
+    height     : 100%;
+    background : url("../images/web/banner-shade.png");
+}
+
+.banner h1, .banner h3 {
+    text-align : center;
+    color      : #fff;
+    position   : relative;
+    top        : 231px;
+}
+
+.banner h3 {
+    line-height : 84px;
+}
+
+.banner * {
+    z-index : 999;
+}
+
+.banner-share {
+    padding-left : 534px;
+    position     : relative;
+    top          : 293px;
+}
+
+.banner-input {
+    width      : 570px;
+    height     : 92px;
+    background : #ccc;
+    position   : relative;
+    top        : 333px;
+    padding    : 19px 17px;
+}
+
+.domain-name {
+    height       : 55px;
+    width        : 274px;
+    border       : none;
+    padding-left : 26px;
+    background   : #fff;
+    font-weight  : bold;
+    color        : #000;
+    float        : left;
+}
+
+label[for=domain-name] {
+    position     : relative;
+    height       : 55px;
+    width        : 85px;
+    padding-left : 24px;
+    line-height  : 55px;
+    background   : #ffe13e;
+    border-right : 1px solid #fff;
+    font-size    : 20px;
+    float        : left;
+    overflow     : hidden;
+}
+
+label[for=domain-name]:before {
+    content    : "";
+    display    : block;
+    position   : absolute;
+    top        : 26px;
+    right      : 16px;
+    background : url("../images/web/arrow-down.png");
+    width      : 16px;
+    height     : 9px;
+    transition : transform .3s ease-in-out;
+}
+
+label[for=domain-name]:hover:before {
+    transform : translateY(30px);
+}
+
+.check {
+    height       : 55px;
+    width        : 152px;
+    line-height  : 55px;
+    background   : #ffe13e;
+    padding-left : 18px;
+    float        : right;
+    color        : #fff;
+    cursor       : pointer;
+}
+
+.label-list {
+    width            : 110px;
+    position         : absolute;
+    left             : 291px;
+    top              : 74px;
+    background       : #ffe13e;
+    height           : 0;
+    overflow         : hidden;
+    transition       : all 0.3s ease-in-out;
+    transition-delay : 0.2s;
+}
+
+.label-list li {
+    display       : block;
+    height        : 30px;
+    font-size     : 20px;
+    transition    : all .3s ease-in-out;
+    border-bottom : 1px solid #c2ab2e;
+}
+
+.label-list li:hover {
+    padding-left : 10px;
+    background   : #c2ab2e;
+}
+
+label[for=domain-name]:hover + .label-list, .label-list:hover {
+    height     : 120px;
+    padding    : 10px;
+    border-top : 1px solid #c2ab2e;
+}
+
+.pathway {
+    position: relative;
+    height:653px;
+}
+
+.pathway:before {
+    content: '';
+    display : block;
+    position : absolute;
+    top: 0;
+    left: 0;
+    height: 653px;
+    width: 50%;
+    background: #202242;
+    z-index : -1;
+}
+.pathway:after {
+    content: '';
+    display : block;
+    position : absolute;
+    top: 0;
+    left: 50%;
+    height: 653px;
+    width: 50%;
+    background: #ffe13e;
+    z-index : -1;
+}
+
+.domain-name:focus  {
+    outline:none;
+    border: 0;
+}
+
+.web-Host, .domain {
+    color: #fff;
+    float: left;
+}
+
+.pathway-content {
+    height: 653px;
+    padding-top: 115px;
+    padding-bottom: 105px;
+}
+
+.web-Host , .domain{
+    height:433px;
+    width: 582px;
+    text-align: center;
+    line-height: 1.8;
+}
+
+.domain h3, .web-Host h3 {
+    margin-bottom: 30px;
+}
+
+.web-img{
+    width: 169px;
+    height: 169px;
+    margin: 0 auto 35px;
+}
+
+.domain-img {
+    width: 296px;
+    height: 73px;
+    margin: 65px auto;
+}
+.more-btn {
+    width: 155px;
+    height: 56px;
+    border: 2px solid #fff;
+    text-align: center;
+    line-height: 56px;
+    margin: 30px auto 0;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    position : relative;
+    overflow: hidden;
+}
+
+.more-btn:after {
+    content: '';
+    display : block;
+    position : absolute;
+    top: 50%;
+    left: 50%;
+    width: 10px;
+    height: 10px;
+    background: rgba(255,255,255,0.3);
+    border-radius: 50%;
+    transition: all .3s ease;
+}
+
+.more-btn:hover:after {
+    transform: scale(30);
+}
+
+.features {
+    height:702px;
+    background: #fbf8f1;
+    position : relative;
+}
+.features:before {
+    content: '';
+    display : block;
+    position : absolute;
+    top: 0;
+    left: 27%;
+    background : url("../images/web/features-bg.png");
+    width: 750px;
+    height: 700px;
+    background-position-x: -100px;
+}
+.features-content {
+    height: 702px;
+    padding-top: 96px;
+}
+
+.features-content h2, .features-content h4 {
+    text-align: center;
+}
+
+.features-content h2 {
+    font-size: 40px;
+    font-weight: bolder;
+}
+
+.features-content h4 {
+    line-height : 50px;
+    color: rgba(0,0,0,0.5);
+}
+
+.show-features li {
+    width: 270px;
+    height: 437px;
+    float: left;
+    margin-right: 30px;
+    text-align:  center;
+    padding-top: 220px;
+    position : relative;
+    transition:all 0.3s ease;
+}
+
+.show-features li:last-of-type {
+    margin-right: 0;
+}
+.show-features li:nth-of-type(1) {
+    background: url("../images/web/support.png") no-repeat;
+    background-position-x: 71px;
+}
+.show-features li:nth-of-type(2) {
+    background: url("../images/web/cloud.png") no-repeat;
+    background-position-x: 71px;
+}
+.show-features li:nth-of-type(3) {
+    background: url("../images/web/db.png") no-repeat;
+    background-position-x: 71px;
+}
+.show-features li:nth-of-type(4) {
+    background: url("../images/web/monitoring.png") no-repeat;
+    background-position-x: 71px;
+}
+.show-features li h3 {
+    color: #ffe13e;
+    margin-bottom:  30px;
+    font-size: 30px;
+}
+
+.show-features li:before {
+    content: '';
+    display : block;
+    position : absolute;
+    width: 70px;
+    height: 2px;
+    background: #8d8d99;
+    top: 162px;
+    left: 100px;
+}
+
+.show-features li:hover {
+    box-shadow: 2px 3px 10px rgba(0,0,0,0.2), -3px -2px 10px rgba(0,0,0,0.2);
+    transform: scale(1.2);
+}

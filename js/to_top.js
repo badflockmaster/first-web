@@ -17,6 +17,6 @@ function to_top(){
             if(otop === 0) {
                 clearInterval(timer);
             }
-        }, 10);
+        }, 30);
     };
 }

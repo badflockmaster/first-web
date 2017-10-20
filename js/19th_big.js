@@ -41,4 +41,5 @@ window.onload = function () {
 
         go();
     }
+    to_top();
 };
